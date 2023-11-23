@@ -58,7 +58,8 @@ const Hero = () => {
               </Link>
               <Link
                 href='/Kevin Paul Gonzales-CV.pdf'
-                download='Kevin Paul Gonzales-CV.pdf'
+                download={true}
+                target='_blank'
               >
                 <Button variant='secondary' className='gap-x-2'>
                   Download CV <Download size={18} />
