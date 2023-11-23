@@ -57,7 +57,7 @@ const Hero = () => {
                 </Button>
               </Link>
               <Link
-                href='Kevin Paul Gonzales-CV.pdf'
+                href='/Kevin Paul Gonzales-CV.pdf'
                 download='Kevin Paul Gonzales-CV.pdf'
               >
                 <Button variant='secondary' className='gap-x-2'>
