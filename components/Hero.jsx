@@ -20,7 +20,7 @@ import Badge from './Badge';
 
 const Hero = () => {
   const [typeEffect] = useTypewriter({
-    words: ['<Developer />', '<Freelancer />', '<Designer />'],
+    words: ['<Developer/>', '<Freelancer/>', '<Designer/>'],
     loop: {},
 
     typeSpeed: 100,
