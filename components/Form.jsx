@@ -19,10 +19,10 @@ const Form = () => {
 
     emailjs
       .sendForm(
-        'service_4ahvg79',
-        'template_zj5i8ql',
+        process.env.NEXT_PUBLIC_SERVICE_ID,
+        process.env.NEXT_PUBLIC_TEMPLATE_ID,
         form.current,
-        'ghGaLiPUP2tg4wG0y'
+        process.env.NEXT_PUBLIC_PUBLIC_KEY
       )
       .then(
         (result) => {

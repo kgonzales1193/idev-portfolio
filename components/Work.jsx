@@ -9,10 +9,47 @@ import 'swiper/css/pagination';
 
 import { Pagination } from 'swiper/modules';
 import { Button } from './ui/button';
-import { projectData } from '@/constants';
+import { useEffect, useState } from 'react';
+import { getProjects } from '@/sanity/lib/queries';
 import ProjectCard from './ProjectCard';
 
 const Work = () => {
+  const [categories, setCategories] = useState(['all projects']);
+  const [category, setCategory] = useState('all projects');
+  const [projectData, setProjectData] = useState([]);
+
+  useEffect(() => {
+    // Function to fetch data from Sanity.io
+    const fetchProjectData = async () => {
+      try {
+        const projects = await getProjects();
+        console.log(projects);
+
+        // Remove duplicates from categories
+        const uniqueCategories = [
+          'all projects',
+          ...new Set(
+            projects.map((item) => item.category?.category || 'Uncategorized')
+          ),
+        ];
+
+        setCategories(uniqueCategories);
+        setProjectData(projects);
+      } catch (error) {
+        console.error('Error fetching project data:', error);
+      }
+    };
+
+    // Call the function to fetch data
+    fetchProjectData();
+  }, []); // The empty dependency array ensures that the effect runs only once when the component mounts
+
+  const filteredProjects = projectData.filter((project) => {
+    return category === 'all projects'
+      ? project
+      : project.category?.category === category;
+  });
+
   return (
     <section className='relative mb-12 xl:mb-48'>
       <div className='container mx-auto'>

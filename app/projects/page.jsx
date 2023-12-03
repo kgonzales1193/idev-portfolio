@@ -1,24 +1,109 @@
+// 'use client';
+
+// import ProjectCard from '@/components/ProjectCard';
+// import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+// import { projectData } from '@/constants';
+// import { useState } from 'react';
+
+// //remove category duplicates
+// const uniqueCategories = [
+//   'all projects',
+//   ...new Set(projectData.map((item) => item.category)),
+// ];
+
+// const Projects = () => {
+//   const [categories, setCategories] = useState(uniqueCategories);
+//   const [category, setCategory] = useState('all projects');
+
+//   const filteredProjects = projectData.filter((project) => {
+//     return category === 'all projects'
+//       ? project
+//       : project.category === category;
+//   });
+
+//   return (
+//     <section className='min-h-screen pt-12'>
+//       <div className='container mx-auto'>
+//         <h2 className='section-title mb-8 xl:mb-16 text-center mx-auto'>
+//           My Projects
+//         </h2>
+//         {/* tabs */}
+//         <Tabs defaultValue={category} className='mb-24 xl:mb-48'>
+//           <TabsList className='w-full grid h-full md:grid-cols-4 lg:max-w-[640px] mb-12 mx-auto md:border dark:border-none'>
+//             {categories.map((category, index) => {
+//               return (
+//                 <TabsTrigger
+//                   onClick={() => setCategory(category)}
+//                   value={category}
+//                   key={index}
+//                   className='capitalize w-[162px] md:w-auto'
+//                 >
+//                   {category}
+//                 </TabsTrigger>
+//               );
+//             })}
+//           </TabsList>
+//           {/* tabs content */}
+
+//           <div className='text-lg xl:mt-8 grid grid-cols-1 lg:grid-cols-3 gap-4'>
+//             {filteredProjects.map((project, index) => {
+//               return (
+//                 <TabsContent value={category} key={index}>
+//                   <ProjectCard project={project} />
+//                 </TabsContent>
+//               );
+//             })}
+//           </div>
+//         </Tabs>
+//       </div>
+//     </section>
+//   );
+// };
+// export default Projects;
+
+// Import necessary dependencies
 'use client';
 
-import ProjectCard from '@/components/ProjectCard';
+import { useState, useEffect } from 'react';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { projectData } from '@/constants';
-import { useState } from 'react';
-
-//remove category duplicates
-const uniqueCategories = [
-  'all projects',
-  ...new Set(projectData.map((item) => item.category)),
-];
+import ProjectCard from '@/components/ProjectCard';
+import { getProjects } from '@/sanity/lib/queries';
 
 const Projects = () => {
-  const [categories, setCategories] = useState(uniqueCategories);
+  const [categories, setCategories] = useState(['all projects']);
   const [category, setCategory] = useState('all projects');
+  const [projectData, setProjectData] = useState([]);
+
+  useEffect(() => {
+    // Function to fetch data from Sanity.io
+    const fetchProjectData = async () => {
+      try {
+        const projects = await getProjects();
+        console.log(projects);
+
+        // Remove duplicates from categories
+        const uniqueCategories = [
+          'all projects',
+          ...new Set(
+            projects.map((item) => item.category?.category || 'Uncategorized')
+          ),
+        ];
+
+        setCategories(uniqueCategories);
+        setProjectData(projects);
+      } catch (error) {
+        console.error('Error fetching project data:', error);
+      }
+    };
+
+    // Call the function to fetch data
+    fetchProjectData();
+  }, []); // The empty dependency array ensures that the effect runs only once when the component mounts
 
   const filteredProjects = projectData.filter((project) => {
     return category === 'all projects'
       ? project
-      : project.category === category;
+      : project.category?.category === category;
   });
 
   return (
@@ -30,33 +115,29 @@ const Projects = () => {
         {/* tabs */}
         <Tabs defaultValue={category} className='mb-24 xl:mb-48'>
           <TabsList className='w-full grid h-full md:grid-cols-4 lg:max-w-[640px] mb-12 mx-auto md:border dark:border-none'>
-            {categories.map((category, index) => {
-              return (
-                <TabsTrigger
-                  onClick={() => setCategory(category)}
-                  value={category}
-                  key={index}
-                  className='capitalize w-[162px] md:w-auto'
-                >
-                  {category}
-                </TabsTrigger>
-              );
-            })}
+            {categories.map((category, index) => (
+              <TabsTrigger
+                onClick={() => setCategory(category)}
+                value={category}
+                key={index}
+                className='capitalize w-[162px] md:w-auto'
+              >
+                {category}
+              </TabsTrigger>
+            ))}
           </TabsList>
           {/* tabs content */}
-
           <div className='text-lg xl:mt-8 grid grid-cols-1 lg:grid-cols-3 gap-4'>
-            {filteredProjects.map((project, index) => {
-              return (
-                <TabsContent value={category} key={index}>
-                  <ProjectCard project={project} />
-                </TabsContent>
-              );
-            })}
+            {filteredProjects.map((project, index) => (
+              <TabsContent value={category} key={index}>
+                <ProjectCard project={project} />
+              </TabsContent>
+            ))}
           </div>
         </Tabs>
       </div>
     </section>
   );
 };
+
 export default Projects;
