@@ -7,6 +7,7 @@ import { cn } from "@/lib/utils";
 import { ThemeProvider } from "@/components/ThemeProvider";
 
 //Components
+import { Toaster } from "@/components/ui/sonner";
 import Header from "@/components/global/Header";
 import PageTransition from "@/components/PageTransition";
 import StairTransition from "@/components/StairTransition";
@@ -37,6 +38,7 @@ export default function RootLayout({
 					<StairTransition />
 					<PageTransition>{children}</PageTransition>
 				</ThemeProvider>
+				<Toaster />
 			</body>
 			<PrismicPreview repositoryName={repositoryName} />
 		</html>

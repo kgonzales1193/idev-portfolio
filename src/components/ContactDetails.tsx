@@ -17,6 +17,7 @@ import {
 } from "./ui/select";
 import { Textarea } from "./ui/textarea";
 import { Button } from "./ui/button";
+import { toast } from "sonner";
 
 const info = [
 	{
@@ -47,14 +48,16 @@ const ContactDetails = () => {
 		if (formRef.current) {
 			emailjs
 				.sendForm("service_4ahvg79", "template_gkpzedo", formRef.current, {
-					publicKey: process.env.API_KEY,
+					publicKey: "ghGaLiPUP2tg4wG0y",
 				})
 				.then(
 					(result) => {
 						setSuccess(true);
+						toast.success("Message sent successfully!");
 					},
 					(error) => {
 						setError(true);
+						toast.error("Failed to send the message. Please try again later.");
 					}
 				);
 		}
@@ -106,11 +109,17 @@ const ContactDetails = () => {
 								<SelectContent>
 									<SelectGroup>
 										<SelectLabel>Select a Service</SelectLabel>
-										<SelectItem value='web'>Web Development</SelectItem>
-										<SelectItem value='design'>UI/UX Design</SelectItem>
-										<SelectItem value='va'>Virtual Assistance</SelectItem>
-										<SelectItem value='seo'>SEO</SelectItem>
-										<SelectItem value='other'>Other Services</SelectItem>
+										<SelectItem value='Web Development'>
+											Web Development
+										</SelectItem>
+										<SelectItem value='UI/UX Design'>UI/UX Design</SelectItem>
+										<SelectItem value='Virtual Assitance'>
+											Virtual Assistance
+										</SelectItem>
+										<SelectItem value='SEO'>SEO</SelectItem>
+										<SelectItem value='Other Services'>
+											Other Services
+										</SelectItem>
 									</SelectGroup>
 								</SelectContent>
 							</Select>
@@ -128,8 +137,8 @@ const ContactDetails = () => {
 								value='Send'>
 								Send Message
 							</Button>
-							{error && "Message sent successfully!"}
-							{success && "Failed to send the message. Please try again later."}
+							{/* {success && "Message sent successfully!"}
+							{error && "Failed to send the message. Please try again later."} */}
 						</form>
 					</div>
 					{/* Info */}
