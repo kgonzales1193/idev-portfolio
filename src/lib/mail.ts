@@ -20,6 +20,7 @@ type SendEmailDto = {
 	lastname: string;
 	email: string;
 	phone: string;
+	service: string;
 	message: string;
 };
 
@@ -32,6 +33,7 @@ export const sendEmail = async (dto: SendEmailDto) => {
 		lastname,
 		email,
 		phone,
+		service,
 		message,
 	} = dto;
 
@@ -44,6 +46,7 @@ export const sendEmail = async (dto: SendEmailDto) => {
       <p>Last Name: ${lastname}</p>
       <p>Email: ${email}</p>
       <p>Phone: ${phone}</p>
+      <p>Service: ${service}</p>
       <p>Message: ${message}</p>
     `,
 	});

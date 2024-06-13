@@ -1,5 +1,7 @@
 "use client";
 
+import { useRef, useState } from "react";
+import emailjs from "@emailjs/browser";
 import { motion } from "framer-motion";
 
 import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
@@ -35,6 +37,29 @@ const info = [
 ];
 
 const ContactDetails = () => {
+	const formRef = useRef<HTMLFormElement>(null);
+	const [error, setError] = useState<boolean>(false);
+	const [success, setSuccess] = useState<boolean>(false);
+
+	const sendEmail = (e: { preventDefault: () => void }) => {
+		e.preventDefault();
+
+		if (formRef.current) {
+			emailjs
+				.sendForm("service_4ahvg79", "template_gkpzedo", formRef.current, {
+					publicKey: process.env.API_KEY,
+				})
+				.then(
+					(result) => {
+						setSuccess(true);
+					},
+					(error) => {
+						setError(true);
+					}
+				);
+		}
+	};
+
 	return (
 		<motion.section
 			initial={{ opacity: 0 }}
@@ -46,9 +71,10 @@ const ContactDetails = () => {
 			<div className='container mx-auto'>
 				<div className='flex flex-col xl:flex-row gap-[30px]'>
 					{/* Form */}
-					<div className='xl:w-[54%] order-2 xl:order-none'>
+					<div className='xl:-[54%] order-2 xl:order-none'>
 						<form
-							action=''
+							ref={formRef}
+							onSubmit={sendEmail}
 							className='flex flex-col gap-6 p-10 bg-muted rounded-xl'>
 							<h3 className='text-4xl text-primary'>
 								Let&apos;s Work Together
@@ -59,29 +85,38 @@ const ContactDetails = () => {
 							</p>
 							{/* Input */}
 							<div className='grid grid-cols-1 md:grid-cols-2 gap-6'>
-								<Input type='firstname' placeholder='First Name' />
-								<Input type='firstname' placeholder='First Name' />
-								<Input type='email' placeholder='Email Address' />
-								<Input type='phone' placeholder='Phone Number' />
+								<Input
+									name='firstname'
+									type='firstname'
+									placeholder='First Name'
+								/>
+								<Input
+									name='lastname'
+									type='firstname'
+									placeholder='Last Name'
+								/>
+								<Input name='email' type='email' placeholder='Email Address' />
+								<Input name='phone' type='phone' placeholder='Phone Number' />
 							</div>
 							{/* Select */}
-							<Select>
+							<Select name='service'>
 								<SelectTrigger className='w-full'>
 									<SelectValue placeholder='Select a Service' />
 								</SelectTrigger>
 								<SelectContent>
 									<SelectGroup>
 										<SelectLabel>Select a Service</SelectLabel>
-										<SelectItem value='est'>Web Development</SelectItem>
-										<SelectItem value='cst'>UI/UX Design</SelectItem>
-										<SelectItem value='mst'>Virtual Assistance</SelectItem>
-										<SelectItem value='pst'>SEO</SelectItem>
-										<SelectItem value='lst'>Other Services</SelectItem>
+										<SelectItem value='web'>Web Development</SelectItem>
+										<SelectItem value='design'>UI/UX Design</SelectItem>
+										<SelectItem value='va'>Virtual Assistance</SelectItem>
+										<SelectItem value='seo'>SEO</SelectItem>
+										<SelectItem value='other'>Other Services</SelectItem>
 									</SelectGroup>
 								</SelectContent>
 							</Select>
 							{/* Textarea */}
 							<Textarea
+								name='message'
 								className='h-[200px]'
 								placeholder='Type your message here.'
 							/>
@@ -89,9 +124,12 @@ const ContactDetails = () => {
 							<Button
 								size={"lg"}
 								className='rounded-full max-w-40'
-								type='submit'>
+								type='submit'
+								value='Send'>
 								Send Message
 							</Button>
+							{error && "Message sent successfully!"}
+							{success && "Failed to send the message. Please try again later."}
 						</form>
 					</div>
 					{/* Info */}
