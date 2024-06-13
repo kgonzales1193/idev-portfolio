@@ -17,6 +17,9 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "contact": {
+              "type": "SharedSlice"
+            },
             "work": {
               "type": "SharedSlice"
             },
@@ -47,11 +50,11 @@
       },
       "meta_image": {
         "config": {
+          "label": "Meta Image",
           "constraint": {
             "height": 1260,
             "width": 2400
           },
-          "label": "Meta Image",
           "thumbnails": []
         },
         "type": "Image"
