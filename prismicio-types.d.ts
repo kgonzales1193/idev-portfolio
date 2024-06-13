@@ -126,7 +126,7 @@ export type NavigationDocument<Lang extends string = string> =
     Lang
   >;
 
-type PageDocumentDataSlicesSlice = ResumeSlice | ServicesSlice;
+type PageDocumentDataSlicesSlice = WorkSlice | ResumeSlice | ServicesSlice;
 
 /**
  * Content for Page documents
@@ -433,6 +433,33 @@ export type ServicesSlice = prismic.SharedSlice<
   ServicesSliceVariation
 >;
 
+/**
+ * Default variation for Work Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type WorkSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Record<string, never>,
+  never
+>;
+
+/**
+ * Slice variation for *Work*
+ */
+type WorkSliceVariation = WorkSliceDefault;
+
+/**
+ * Work Shared Slice
+ *
+ * - **API ID**: `work`
+ * - **Description**: Work
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type WorkSlice = prismic.SharedSlice<"work", WorkSliceVariation>;
+
 declare module "@prismicio/client" {
   interface CreateClient {
     (
@@ -465,6 +492,9 @@ declare module "@prismicio/client" {
       ServicesSliceDefaultPrimary,
       ServicesSliceVariation,
       ServicesSliceDefault,
+      WorkSlice,
+      WorkSliceVariation,
+      WorkSliceDefault,
     };
   }
 }
