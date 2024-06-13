@@ -126,7 +126,7 @@ export type NavigationDocument<Lang extends string = string> =
     Lang
   >;
 
-type PageDocumentDataSlicesSlice = ServicesSlice;
+type PageDocumentDataSlicesSlice = ResumeSlice | ServicesSlice;
 
 /**
  * Content for Page documents
@@ -285,6 +285,33 @@ type HeroSliceVariation = HeroSliceDefault;
 export type HeroSlice = prismic.SharedSlice<"hero", HeroSliceVariation>;
 
 /**
+ * Default variation for Resume Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ResumeSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Record<string, never>,
+  never
+>;
+
+/**
+ * Slice variation for *Resume*
+ */
+type ResumeSliceVariation = ResumeSliceDefault;
+
+/**
+ * Resume Shared Slice
+ *
+ * - **API ID**: `resume`
+ * - **Description**: Resume
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ResumeSlice = prismic.SharedSlice<"resume", ResumeSliceVariation>;
+
+/**
  * Item in *Services → Default → Primary → Services*
  */
 export interface ServicesSliceDefaultPrimaryServicesItem {
@@ -430,6 +457,9 @@ declare module "@prismicio/client" {
       HeroSliceDefaultPrimary,
       HeroSliceVariation,
       HeroSliceDefault,
+      ResumeSlice,
+      ResumeSliceVariation,
+      ResumeSliceDefault,
       ServicesSlice,
       ServicesSliceDefaultPrimaryServicesItem,
       ServicesSliceDefaultPrimary,

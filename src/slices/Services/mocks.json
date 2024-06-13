@@ -13,8 +13,8 @@
 								"number",
 								{
 									"__TYPE__": "FieldContent",
-									"value": "below",
-									"type": "Text"
+									"type": "Text",
+									"value": "01"
 								}
 							],
 							[
@@ -29,8 +29,8 @@
 								"description",
 								{
 									"__TYPE__": "FieldContent",
-									"value": "test",
-									"type": "Text"
+									"type": "Text",
+									"value": "      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit beatae possimus iste itaque esse quibusdam nulla ea cumque error aliquid.\n"
 								}
 							],
 							[
@@ -41,6 +41,93 @@
 										"__TYPE__": "ExternalLink",
 										"url": "http://twitter.com"
 									}
+								}
+							]
+						]
+					},
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"number",
+								{
+									"__TYPE__": "FieldContent",
+									"type": "Text",
+									"value": "02"
+								}
+							],
+							[
+								"title",
+								{
+									"__TYPE__": "FieldContent",
+									"type": "Text",
+									"value": "Lorem Ipsum"
+								}
+							],
+							[
+								"description",
+								{
+									"__TYPE__": "FieldContent",
+									"type": "Text",
+									"value": "      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit beatae possimus iste itaque esse quibusdam nulla ea cumque error aliquid.\n"
+								}
+							]
+						]
+					},
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"number",
+								{
+									"__TYPE__": "FieldContent",
+									"type": "Text",
+									"value": "03"
+								}
+							],
+							[
+								"title",
+								{
+									"__TYPE__": "FieldContent",
+									"type": "Text",
+									"value": "Lorem Ipsum"
+								}
+							],
+							[
+								"description",
+								{
+									"__TYPE__": "FieldContent",
+									"type": "Text",
+									"value": "      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit beatae possimus iste itaque esse quibusdam nulla ea cumque error aliquid.\n"
+								}
+							]
+						]
+					},
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"number",
+								{
+									"__TYPE__": "FieldContent",
+									"type": "Text",
+									"value": "04"
+								}
+							],
+							[
+								"title",
+								{
+									"__TYPE__": "FieldContent",
+									"type": "Text",
+									"value": "Lorem Ipsum"
+								}
+							],
+							[
+								"description",
+								{
+									"__TYPE__": "FieldContent",
+									"type": "Text",
+									"value": "      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit beatae possimus iste itaque esse quibusdam nulla ea cumque error aliquid.\n"
 								}
 							]
 						]
