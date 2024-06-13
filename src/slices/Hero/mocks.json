@@ -1,0 +1,58 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"eyebrow_heading": {
+				"__TYPE__": "FieldContent",
+				"type": "Text",
+				"value": "lorem fudge"
+			},
+			"image": {
+				"__TYPE__": "ImageContent",
+				"url": "https://images.unsplash.com/photo-1555952517-2e8e729e0b44?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHwyM3x8cGVyc29ufGVufDB8fHx8MTcxODI0ODk0N3ww&ixlib=rb-4.0.3&q=85",
+				"alt": "shallow focus photo of man",
+				"origin": {
+					"id": "NR705beN_CU",
+					"url": "https://images.unsplash.com/photo-1555952517-2e8e729e0b44?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHwyM3x8cGVyc29ufGVufDB8fHx8MTcxODI0ODk0N3ww&ixlib=rb-4.0.3&q=85",
+					"width": 2364,
+					"height": 2955
+				},
+				"width": 2364,
+				"height": 2955,
+				"edit": {
+					"background": "transparent",
+					"zoom": 1,
+					"crop": {
+						"x": 0,
+						"y": 0
+					}
+				},
+				"thumbnails": {}
+			},
+			"cta_label": {
+				"__TYPE__": "FieldContent",
+				"value": "language",
+				"type": "Text"
+			},
+			"cta_link": {
+				"__TYPE__": "LinkContent",
+				"value": {
+					"__TYPE__": "ExternalLink",
+					"url": "https://prismic.io"
+				}
+			},
+			"description": {
+				"__TYPE__": "FieldContent",
+				"type": "Text",
+				"value": "Lorem ipsum dolor sit amet consectetur adipisicing elit.Lorem ipsum dolor sit amet consectetur adipisicing elit.Lorem ipsum dolor sit amet consectetur adipisicing elit."
+			},
+			"heading": {
+				"__TYPE__": "FieldContent",
+				"type": "Text",
+				"value": "Lorem ipsum dolor sit amet consectetur adipisicing elit."
+			}
+		},
+		"items": []
+	}
+]

@@ -1,0 +1,35 @@
+{
+  "format": "custom",
+  "id": "navigation",
+  "label": "Navigation",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Main": {
+      "nav_items": {
+        "type": "Group",
+        "config": {
+          "label": "Nav Items",
+          "repeat": true,
+          "fields": {
+            "nav_label": {
+              "type": "Text",
+              "config": {
+                "label": "Nav Label",
+                "placeholder": ""
+              }
+            },
+            "nav_link": {
+              "type": "Link",
+              "config": {
+                "label": "Nav Link",
+                "placeholder": "",
+                "select": null
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
