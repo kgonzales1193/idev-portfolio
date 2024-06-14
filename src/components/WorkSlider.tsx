@@ -44,7 +44,7 @@ const WorkSlider = ({ projects }: { projects: any[] }) => {
 					{/* Buttons */}
 					<div className='flex items-center gap-4'>
 						{/* Live Project */}
-						<PrismicNextLink href={project.live_link} target='_blank'>
+						<PrismicNextLink field={project.live_link} target='_blank'>
 							<TooltipProvider delayDuration={100}>
 								<Tooltip>
 									<TooltipTrigger className='w-[70px] h-[70px] rounded-full bg-white/5 flex justify-center items-center group'>
@@ -57,7 +57,7 @@ const WorkSlider = ({ projects }: { projects: any[] }) => {
 							</TooltipProvider>
 						</PrismicNextLink>
 						{/* Github Link */}
-						<PrismicNextLink href={project.github_link} target='_blank'>
+						<PrismicNextLink field={project.github_link} target='_blank'>
 							<TooltipProvider delayDuration={100}>
 								<Tooltip>
 									<TooltipTrigger className='w-[70px] h-[70px] rounded-full bg-white/5 flex justify-center items-center group'>
