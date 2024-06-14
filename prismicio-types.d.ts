@@ -319,6 +319,222 @@ type HeroSliceVariation = HeroSliceDefault;
 export type HeroSlice = prismic.SharedSlice<"hero", HeroSliceVariation>;
 
 /**
+ * Item in *Resume → Default → Primary → About Item*
+ */
+export interface ResumeSliceDefaultPrimaryAboutItemItem {
+  /**
+   * Field Name field in *Resume → Default → Primary → About Item*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: resume.default.primary.about_item[].field_name
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  field_name: prismic.KeyTextField;
+
+  /**
+   * Field Value field in *Resume → Default → Primary → About Item*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: resume.default.primary.about_item[].field_value
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  field_value: prismic.KeyTextField;
+}
+
+/**
+ * Item in *Resume → Default → Primary → Experience Item*
+ */
+export interface ResumeSliceDefaultPrimaryExperienceItemItem {
+  /**
+   * Company Name field in *Resume → Default → Primary → Experience Item*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: resume.default.primary.experience_item[].company_name
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  company_name: prismic.KeyTextField;
+
+  /**
+   * Position field in *Resume → Default → Primary → Experience Item*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: resume.default.primary.experience_item[].position
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  position: prismic.KeyTextField;
+
+  /**
+   * Duration field in *Resume → Default → Primary → Experience Item*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: resume.default.primary.experience_item[].duration
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  duration: prismic.KeyTextField;
+}
+
+/**
+ * Item in *Resume → Default → Primary → Education Item*
+ */
+export interface ResumeSliceDefaultPrimaryEducationItemItem {
+  /**
+   * Institution field in *Resume → Default → Primary → Education Item*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: resume.default.primary.education_item[].institution
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  institution: prismic.KeyTextField;
+
+  /**
+   * Degree field in *Resume → Default → Primary → Education Item*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: resume.default.primary.education_item[].degree
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  degree: prismic.KeyTextField;
+
+  /**
+   * School Year field in *Resume → Default → Primary → Education Item*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: resume.default.primary.education_item[].school_year
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  school_year: prismic.KeyTextField;
+}
+
+/**
+ * Primary content in *Resume → Default → Primary*
+ */
+export interface ResumeSliceDefaultPrimary {
+  /**
+   * About Title field in *Resume → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: resume.default.primary.about_title
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  about_title: prismic.KeyTextField;
+
+  /**
+   * About Description field in *Resume → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: resume.default.primary.about_description
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  about_description: prismic.KeyTextField;
+
+  /**
+   * Experience Title field in *Resume → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: resume.default.primary.experience_title
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  experience_title: prismic.KeyTextField;
+
+  /**
+   * Experience Description field in *Resume → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: resume.default.primary.experience_description
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  experience_description: prismic.KeyTextField;
+
+  /**
+   * Education Title field in *Resume → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: resume.default.primary.education_title
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  education_title: prismic.KeyTextField;
+
+  /**
+   * Education Description field in *Resume → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: resume.default.primary.education_description
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  education_description: prismic.KeyTextField;
+
+  /**
+   * Skill Title field in *Resume → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: resume.default.primary.skill_title
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  skill_title: prismic.KeyTextField;
+
+  /**
+   * Skill Description field in *Resume → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: resume.default.primary.skill_description
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  skill_description: prismic.KeyTextField;
+
+  /**
+   * About Item field in *Resume → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: resume.default.primary.about_item[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  about_item: prismic.GroupField<
+    Simplify<ResumeSliceDefaultPrimaryAboutItemItem>
+  >;
+
+  /**
+   * Experience Item field in *Resume → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: resume.default.primary.experience_item[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  experience_item: prismic.GroupField<
+    Simplify<ResumeSliceDefaultPrimaryExperienceItemItem>
+  >;
+
+  /**
+   * Education Item field in *Resume → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: resume.default.primary.education_item[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  education_item: prismic.GroupField<
+    Simplify<ResumeSliceDefaultPrimaryEducationItemItem>
+  >;
+}
+
+/**
  * Default variation for Resume Slice
  *
  * - **API ID**: `default`
@@ -327,7 +543,7 @@ export type HeroSlice = prismic.SharedSlice<"hero", HeroSliceVariation>;
  */
 export type ResumeSliceDefault = prismic.SharedSliceVariation<
   "default",
-  Record<string, never>,
+  Simplify<ResumeSliceDefaultPrimary>,
   never
 >;
 
@@ -522,6 +738,10 @@ declare module "@prismicio/client" {
       HeroSliceVariation,
       HeroSliceDefault,
       ResumeSlice,
+      ResumeSliceDefaultPrimaryAboutItemItem,
+      ResumeSliceDefaultPrimaryExperienceItemItem,
+      ResumeSliceDefaultPrimaryEducationItemItem,
+      ResumeSliceDefaultPrimary,
       ResumeSliceVariation,
       ResumeSliceDefault,
       ServicesSlice,

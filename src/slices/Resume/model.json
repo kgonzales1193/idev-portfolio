@@ -11,7 +11,147 @@
       "version": "initial",
       "description": "Default",
       "imageUrl": "",
-      "primary": {},
+      "primary": {
+        "about_title": {
+          "type": "Text",
+          "config": {
+            "label": "About Title",
+            "placeholder": ""
+          }
+        },
+        "about_description": {
+          "type": "Text",
+          "config": {
+            "label": "About Description",
+            "placeholder": ""
+          }
+        },
+        "experience_title": {
+          "type": "Text",
+          "config": {
+            "label": "Experience Title",
+            "placeholder": ""
+          }
+        },
+        "experience_description": {
+          "type": "Text",
+          "config": {
+            "label": "Experience Description",
+            "placeholder": ""
+          }
+        },
+        "education_title": {
+          "type": "Text",
+          "config": {
+            "label": "Education Title",
+            "placeholder": ""
+          }
+        },
+        "education_description": {
+          "type": "Text",
+          "config": {
+            "label": "Education Description",
+            "placeholder": ""
+          }
+        },
+        "skill_title": {
+          "type": "Text",
+          "config": {
+            "label": "Skill Title",
+            "placeholder": ""
+          }
+        },
+        "skill_description": {
+          "type": "Text",
+          "config": {
+            "label": "Skill Description",
+            "placeholder": ""
+          }
+        },
+        "about_item": {
+          "type": "Group",
+          "config": {
+            "label": "About Item",
+            "repeat": true,
+            "fields": {
+              "field_name": {
+                "type": "Text",
+                "config": {
+                  "label": "Field Name",
+                  "placeholder": ""
+                }
+              },
+              "field_value": {
+                "type": "Text",
+                "config": {
+                  "label": "Field Value",
+                  "placeholder": ""
+                }
+              }
+            }
+          }
+        },
+        "experience_item": {
+          "type": "Group",
+          "config": {
+            "label": "Experience Item",
+            "repeat": true,
+            "fields": {
+              "company_name": {
+                "type": "Text",
+                "config": {
+                  "label": "Company Name",
+                  "placeholder": ""
+                }
+              },
+              "position": {
+                "type": "Text",
+                "config": {
+                  "label": "Position",
+                  "placeholder": ""
+                }
+              },
+              "duration": {
+                "type": "Text",
+                "config": {
+                  "label": "Duration",
+                  "placeholder": ""
+                }
+              }
+            }
+          }
+        },
+        "education_item": {
+          "type": "Group",
+          "config": {
+            "label": "Education Item",
+            "repeat": true,
+            "fields": {
+              "institution": {
+                "type": "Text",
+                "config": {
+                  "label": "Institution",
+                  "placeholder": ""
+                }
+              },
+              "degree": {
+                "type": "Text",
+                "config": {
+                  "label": "Degree",
+                  "placeholder": ""
+                }
+              },
+              "school_year": {
+                "type": "Text",
+                "config": {
+                  "label": "School Year",
+                  "placeholder": ""
+                }
+              }
+            }
+          }
+        }
+      },
       "items": {}
     }
   ]
