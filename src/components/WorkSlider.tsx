@@ -88,7 +88,7 @@ const WorkSlider = ({ projects }: { projects: any[] }) => {
 									<div className='relative w-full h-full'>
 										<PrismicNextImage
 											field={project.image}
-											alt={project.image.alt || ""}
+											alt=''
 											fill
 											className='object-contain xl:object-cover'
 										/>
