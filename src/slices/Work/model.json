@@ -10,7 +10,78 @@
       "docURL": "...",
       "version": "initial",
       "description": "Default",
-      "imageUrl": ""
+      "imageUrl": "",
+      "primary": {
+        "project_item": {
+          "type": "Group",
+          "config": {
+            "label": "Project Item",
+            "repeat": true,
+            "fields": {
+              "project_number": {
+                "type": "Text",
+                "config": {
+                  "label": "Project Number",
+                  "placeholder": ""
+                }
+              },
+              "category": {
+                "type": "Text",
+                "config": {
+                  "label": "Category",
+                  "placeholder": ""
+                }
+              },
+              "title": {
+                "type": "Text",
+                "config": {
+                  "label": "Title",
+                  "placeholder": ""
+                }
+              },
+              "description": {
+                "type": "Text",
+                "config": {
+                  "label": "Description",
+                  "placeholder": ""
+                }
+              },
+              "image": {
+                "type": "Image",
+                "config": {
+                  "label": "Image",
+                  "constraint": {},
+                  "thumbnails": []
+                }
+              },
+              "live_link": {
+                "type": "Link",
+                "config": {
+                  "label": "Live Link",
+                  "placeholder": "",
+                  "select": null
+                }
+              },
+              "github_link": {
+                "type": "Link",
+                "config": {
+                  "label": "Github Link",
+                  "placeholder": "",
+                  "select": null
+                }
+              },
+              "stack": {
+                "type": "Text",
+                "config": {
+                  "label": "Stack",
+                  "placeholder": ""
+                }
+              }
+            }
+          }
+        }
+      },
+      "items": {}
     }
   ]
 }
