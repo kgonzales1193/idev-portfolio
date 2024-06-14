@@ -3,6 +3,7 @@ import { PrismicPreview } from "@prismicio/next";
 import { repositoryName } from "@/prismicio";
 import { Inter as FontSans } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 import { cn } from "@/lib/utils";
 import { ThemeProvider } from "@/components/ThemeProvider";
@@ -41,6 +42,7 @@ export default function RootLayout({
 				</ThemeProvider>
 				<Toaster />
 				<Analytics />
+				<SpeedInsights />
 			</body>
 			<PrismicPreview repositoryName={repositoryName} />
 		</html>
