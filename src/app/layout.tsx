@@ -2,6 +2,7 @@ import "./globals.css";
 import { PrismicPreview } from "@prismicio/next";
 import { repositoryName } from "@/prismicio";
 import { Inter as FontSans } from "next/font/google";
+import { Analytics } from "@vercel/analytics/react";
 
 import { cn } from "@/lib/utils";
 import { ThemeProvider } from "@/components/ThemeProvider";
@@ -39,6 +40,7 @@ export default function RootLayout({
 					<PageTransition>{children}</PageTransition>
 				</ThemeProvider>
 				<Toaster />
+				<Analytics />
 			</body>
 			<PrismicPreview repositoryName={repositoryName} />
 		</html>
