@@ -31,9 +31,7 @@ const Photo = ({ image }: { image: any }) => {
 					className='w-[298px] h-[298px] xl:w-[498px] xl:h-[498px] mix-blend-lighten absolute'>
 					<PrismicNextImage
 						field={image}
-						placeholder='blur'
-						blurDataURL={"/hero7.png"}
-						quality={100}
+						priority
 						fill
 						sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
 						alt={image.alt || ""}
