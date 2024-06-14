@@ -684,6 +684,108 @@ export type ServicesSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Item in *Work → Default → Primary → Project Item*
+ */
+export interface WorkSliceDefaultPrimaryProjectItemItem {
+  /**
+   * Project Number field in *Work → Default → Primary → Project Item*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: work.default.primary.project_item[].project_number
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  project_number: prismic.KeyTextField;
+
+  /**
+   * Category field in *Work → Default → Primary → Project Item*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: work.default.primary.project_item[].category
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  category: prismic.KeyTextField;
+
+  /**
+   * Title field in *Work → Default → Primary → Project Item*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: work.default.primary.project_item[].title
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  title: prismic.KeyTextField;
+
+  /**
+   * Description field in *Work → Default → Primary → Project Item*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: work.default.primary.project_item[].description
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  description: prismic.KeyTextField;
+
+  /**
+   * Image field in *Work → Default → Primary → Project Item*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: work.default.primary.project_item[].image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+
+  /**
+   * Live Link field in *Work → Default → Primary → Project Item*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: work.default.primary.project_item[].live_link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  live_link: prismic.LinkField;
+
+  /**
+   * Github Link field in *Work → Default → Primary → Project Item*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: work.default.primary.project_item[].github_link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  github_link: prismic.LinkField;
+
+  /**
+   * Stack field in *Work → Default → Primary → Project Item*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: work.default.primary.project_item[].stack
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  stack: prismic.KeyTextField;
+}
+
+/**
+ * Primary content in *Work → Default → Primary*
+ */
+export interface WorkSliceDefaultPrimary {
+  /**
+   * Project Item field in *Work → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: work.default.primary.project_item[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  project_item: prismic.GroupField<
+    Simplify<WorkSliceDefaultPrimaryProjectItemItem>
+  >;
+}
+
+/**
  * Default variation for Work Slice
  *
  * - **API ID**: `default`
@@ -692,7 +794,7 @@ export type ServicesSlice = prismic.SharedSlice<
  */
 export type WorkSliceDefault = prismic.SharedSliceVariation<
   "default",
-  Record<string, never>,
+  Simplify<WorkSliceDefaultPrimary>,
   never
 >;
 
@@ -750,6 +852,8 @@ declare module "@prismicio/client" {
       ServicesSliceVariation,
       ServicesSliceDefault,
       WorkSlice,
+      WorkSliceDefaultPrimaryProjectItemItem,
+      WorkSliceDefaultPrimary,
       WorkSliceVariation,
       WorkSliceDefault,
     };
