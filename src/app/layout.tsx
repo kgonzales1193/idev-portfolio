@@ -13,6 +13,7 @@ import { Toaster } from "@/components/ui/sonner";
 import Header from "@/components/global/Header";
 import PageTransition from "@/components/PageTransition";
 import StairTransition from "@/components/StairTransition";
+import Script from "next/script";
 
 const fontSans = FontSans({
 	subsets: ["latin"],
@@ -26,6 +27,11 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang='en' suppressHydrationWarning>
+			<Script
+				defer
+				src='https://umami.keiprojects.com/script.js'
+				data-website-id='9d1d44c4-7ecb-4983-b24e-521583208dd4'
+			/>
 			<body
 				className={cn(
 					"bg-background font-sans antialiased",
