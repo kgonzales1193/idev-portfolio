@@ -27,11 +27,6 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang='en' suppressHydrationWarning>
-			<Script
-				async
-				src='https://umami.keiprojects.com/script.js'
-				data-website-id='9d1d44c4-7ecb-4983-b24e-521583208dd4'
-			/>
 			<body
 				className={cn(
 					"bg-background font-sans antialiased",
@@ -49,6 +44,11 @@ export default function RootLayout({
 				<Toaster />
 				<Analytics />
 				<SpeedInsights />
+				<Script
+					async
+					src='https://umami.keiprojects.com/script.js'
+					data-website-id='9d1d44c4-7ecb-4983-b24e-521583208dd4'
+				/>
 			</body>
 			<PrismicPreview repositoryName={repositoryName} />
 		</html>
