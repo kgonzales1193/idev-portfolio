@@ -2,7 +2,142 @@
 	{
 		"__TYPE__": "SharedSliceContent",
 		"variation": "default",
-		"primary": {},
+		"primary": {
+			"about_title": {
+				"__TYPE__": "FieldContent",
+				"value": "dinner",
+				"type": "Text"
+			},
+			"about_description": {
+				"__TYPE__": "FieldContent",
+				"value": "him",
+				"type": "Text"
+			},
+			"experience_title": {
+				"__TYPE__": "FieldContent",
+				"value": "us",
+				"type": "Text"
+			},
+			"experience_description": {
+				"__TYPE__": "FieldContent",
+				"value": "against",
+				"type": "Text"
+			},
+			"education_title": {
+				"__TYPE__": "FieldContent",
+				"value": "afternoon",
+				"type": "Text"
+			},
+			"education_description": {
+				"__TYPE__": "FieldContent",
+				"value": "log",
+				"type": "Text"
+			},
+			"skill_title": {
+				"__TYPE__": "FieldContent",
+				"value": "picture",
+				"type": "Text"
+			},
+			"skill_description": {
+				"__TYPE__": "FieldContent",
+				"value": "fine",
+				"type": "Text"
+			},
+			"experience_item": {
+				"__TYPE__": "GroupContentType",
+				"value": [
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"company_name",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "want",
+									"type": "Text"
+								}
+							],
+							[
+								"position",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "sale",
+									"type": "Text"
+								}
+							],
+							[
+								"duration",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "page",
+									"type": "Text"
+								}
+							]
+						]
+					}
+				]
+			},
+			"about_item": {
+				"__TYPE__": "GroupContentType",
+				"value": [
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"field_name",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "suppose",
+									"type": "Text"
+								}
+							],
+							[
+								"field_value",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "on",
+									"type": "Text"
+								}
+							]
+						]
+					}
+				]
+			},
+			"education_item": {
+				"__TYPE__": "GroupContentType",
+				"value": [
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"institution",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "happy",
+									"type": "Text"
+								}
+							],
+							[
+								"degree",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "great",
+									"type": "Text"
+								}
+							],
+							[
+								"school_year",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "wherever",
+									"type": "Text"
+								}
+							]
+						]
+					}
+				]
+			}
+		},
 		"items": []
 	}
 ]
