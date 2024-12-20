@@ -46,7 +46,7 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
 						/>
 						{/* CTA & Social Links */}
 						<div className='mt-10 flex flex-col xl:flex-row items-center gap-8'>
-							<Link href='/Kevin Paul Gonzales CV.pdf' target='_blank' download>
+							<Link href='/Kevin Paul GonzalesCV.pdf' target='_blank' download>
 								<Button
 									variant={"outline"}
 									size={"lg"}
